@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiPlayground.Pages.List.Components.StatelessList"
+             >
+    <VerticalStackLayout>
+        <ListView 
+            x:Name="listView"
+            SeparatorColor="White"
+            Margin="10,5,10,5"
+            >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout
+                        Orientation="Vertical">
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Id}"
+                                TextColor="#ffffff"
+                                VerticalOptions="Center"/>
+
+                                <Label Text="{Binding Name}"
+                                HorizontalOptions="CenterAndExpand"
+                                VerticalOptions="Center"
+                                TextColor="#ffffff" />
+
+                                <Button 
+                                Clicked="ImageButton_Clicked"
+                                x:Name="{Binding Id}"
+                                Text="Delete"
+                                />
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+
+            </ListView.ItemTemplate>
+        </ListView>
+    </VerticalStackLayout>
+</ContentView>
